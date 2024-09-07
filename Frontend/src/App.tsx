@@ -46,7 +46,7 @@ const multiplayerAssets: TLAssetStore = {
     const id = uniqueId();
 
     const objectName = `${id}-${file.name}`;
-    const url = `${WORKER_URL}/uploads/${encodeURIComponent(objectName)}`;
+    const url = `${WORKER_URL}/whiteboard/${encodeURIComponent(objectName)}`;
 
     const response = await fetch(url, {
       method: "PUT",
@@ -88,7 +88,7 @@ async function unfurlBookmarkUrl({
 
   try {
     const response = await fetch(
-      `${WORKER_URL}/unfurl?url=${encodeURIComponent(url)}`
+      `${WORKER_URL}/whiteboard/unfurl?url=${encodeURIComponent(url)}`
     );
     const data = await response.json();
 
